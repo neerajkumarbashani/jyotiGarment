@@ -29,7 +29,7 @@ CategoryInterface categoriesReposiroty;
 		
 		Category cate=new Category("Computers");
 				list.add(cate );
-		
+				
 		
 	Category data= (Category) categoriesReposiroty.findAll();
 		System.out.println(data);

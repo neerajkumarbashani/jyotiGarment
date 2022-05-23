@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
@@ -50,5 +51,28 @@ public class UserService {
 return	usernyemail == null;
 			
 	}
+	public void deleteUserbyid(Integer id) {
+		
+		Long countbyid=repo.countById(id);
+		
+		if(countbyid == null || countbyid==0) {
+			throw new NotFoundException("User notr found");
+		}
+		
+		repo.deleteById(id);
+	}
+	
+	
+	
+	
+	public User getUser(Integer id) {
+		
+	User user=repo.findById(id).get();
+	
+return user;	
+	}
+	
+	
+	
 	
 }

@@ -13,4 +13,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	@Query(value="SELECT u FROM User u where u.email = :email")
 	public User getUserBYEmail(@Param("email") String email);
 	
+	public Long countById(Integer id);
+	
 }

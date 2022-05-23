@@ -116,7 +116,10 @@
 						<td th:text="${userlist.lastName}"></td>
 						<td th:text="${userlist.roles}"></td>
 						<td th:text="${userlist.enabled}"></td>
-						<th>Edit &nbsp; Delete </th>
+						<td><a th:href="@{'/user/edit/'+ ${userlist.id}}">edit</a> </td>
+						
+						<td><a th:href="@{'/user/delete/'+ ${userlist.id}}">delete</a> </td>
+						
 					</tr>
 
 
